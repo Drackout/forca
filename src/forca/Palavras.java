@@ -2,12 +2,17 @@ package forca;
 
 public class Palavras {
 
-	public static void main(String[] args) {
-		
-		String[] nomes;
-		nomes = new String[]{ "um", "dois", "tres", "coisa", 
+		private String[] nomes = new String[]{ "um", "dois", "tres", "coisa", 
 				"etc", "yolo", "bananas", "repolhos" };
 
-	}
+		public String[] getNomes() {
+			return nomes;
+		}
+
+		public void setNomes(String[] nomes) {
+			this.nomes = nomes;
+		}
+
+
 
 }
