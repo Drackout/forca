@@ -8,7 +8,7 @@ public class main {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		
-		/*
+		
 		Random gerador = new Random();
 		
 		String[] nomes = new String[]{ "um", "dois", "tres", "coisa", 
@@ -16,18 +16,21 @@ public class main {
 		
 		int val = gerador.nextInt(10);
 		System.out.println(nomes[val]);
-		*/
+		
+		
 		Palavras teste;
+		
 		
 		System.out.println("Jogo da forca");
 		System.out.print("Palavra gerada: ");
 
 		teste = new Palavras();
+		//teste.getNomes();
 		
-		System.out.print("\n\nLetra: ");
+		System.out.print("\nLetra: ");
 		String x = input.nextLine();
 		
-		
+		input.close();
 		
 		
 		
