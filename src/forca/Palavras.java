@@ -9,10 +9,5 @@ public class Palavras {
 			return nomes;
 		}
 
-		public void setNomes(String[] nomes) {
-			this.nomes = nomes;
-		}
-
-
 
 }
