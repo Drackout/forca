@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class main {
 
 	public static void main(String[] args) {
-		//DIOGO
 		Scanner entrada = new Scanner(System.in);
         boolean jogar = true;
         //caso queira repetir
@@ -26,7 +25,6 @@ public class main {
                     letras[x] = palavra.charAt(x);
                     System.out.print("_ ");
                 }
-                //DIOGO - MIKA
                 boolean tentativas = true;
                 int erro = 0;
                 char certas[] = new char[palavra.length()];
@@ -64,10 +62,8 @@ public class main {
                             System.out.println("\n\nBINGO!  '" + palavra + "'.");
                             tentativas = false;
                         } else {
-                        	// MIKA - LUIS
                         	//chamar o grafic
-                        	//grafic teste = new grafic(erro);
-                            //LUIS
+                        	grafic teste = new grafic(erro);
                         }
                     } else {
                         System.out.println("\nEsgotou as tentativas! ");
