@@ -1,43 +1,91 @@
 package forca;
 
-import java.util.Random;
 import java.util.Scanner;
+
 
 public class main {
 
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		
-		
-		Random gerador = new Random();
-		
-		String[] nomes = new String[]{ "um", "dois", "tres", "coisa", 
-				"etc", "yolo", "bananas", "repolhos", "manteiga", "olicos" };
-		
-		int val = gerador.nextInt(10);
-		System.out.println(nomes[val]);
-		
-		
-		Palavras teste;
-		
-		
-		System.out.println("Jogo da forca");
-		System.out.print("Palavra gerada: ");
+		//DIOGO
+		Scanner entrada = new Scanner(System.in);
+        boolean jogar = true;
+        //caso queira repetir
+        do {
+            System.out.println(" ~ Jogo da Forca ~ ");
+            //Dicionario
+            String palavras[] = {
+                "one", "two", "three", "arroz", "esdruxulo", "yolo", "bacon", "estoiro", "peperoni", "mascote"};
+            String palavra = palavras[(int) (Math.random() * palavras.length)];
+            System.out.println("\n\n");
+            
+            boolean jogo = true;
+            do {
+                //letras sorteadas
+                char letras[] = new char[palavra.length()];
+                for (int x = 0; x < palavra.length(); x++) {
+                    letras[x] = palavra.charAt(x);
+                    System.out.print("_ ");
+                }
+                //DIOGO - MIKA
+                boolean tentativas = true;
+                int erro = 0;
+                char certas[] = new char[palavra.length()];
+                while (tentativas) {
+                    if (erro < 6) {
+                        System.out.println("\nDigite uma letra.");
+                        int letraErrada = 0;
 
-		teste = new Palavras();
-		//teste.getNomes();
-		
-		System.out.print("\nLetra: ");
-		String x = input.nextLine();
-		
-		input.close();
-		
-		
-		
-		
-		
-		
-		
+                        //procura na palavra a letra inserida
+                        char letra = entrada.next().charAt(0);
+                        String PalavraNova = "";
+                        
+                        for (int i = 0; i < palavra.length(); i++) {
+                            if (letra == letras[i]) {
+                            	//certo
+                            	certas[i] = letra;
+                            } else {
+                            	//errado
+                                letraErrada++;
+                            }
+                            if (certas[i] == letras[i]) {
+                                PalavraNova += certas[i];
+                                System.out.print(" " + certas[i] + " ");
+
+                            } else {
+                                System.out.print("_ ");
+                            }
+                        }
+                        if (letraErrada >= palavra.length()) {
+                            erro++;
+                            System.out.println("\nErrado ("+erro+"/6)");
+                        }
+                        if (palavra.equals(PalavraNova)) {
+                        	//todas certas
+                            System.out.println("\n\nBINGO!  '" + palavra + "'.");
+                            tentativas = false;
+                        } else {
+                        	// MIKA - LUIS
+                        	//chamar o grafic
+                        	//grafic teste = new grafic(erro);
+                            //LUIS
+                        }
+                    } else {
+                        System.out.println("\nEsgotou as tentativas! ");
+                        System.out.println("A palavra era: " + palavra);
+                        tentativas = false;
+                    }
+                }
+                jogo = false;
+            } while (jogo);
+            
+            System.out.println("\nNovo jogo? (s/n)?");
+            char novoJogo = entrada.next().charAt(0);
+            if (novoJogo == 'S' || novoJogo == 's') {
+                jogar = true;
+            } else {
+                jogar = false;
+            }
+        } while (jogar);
 
 	}
 
