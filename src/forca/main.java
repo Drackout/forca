@@ -12,9 +12,7 @@ public class main {
         do {
             System.out.println(" ~ Jogo da Forca ~ ");
             //Dicionario
-            String palavras[] = {
-                "one", "two", "three", "arroz", "esdruxulo", "yolo", "bacon", "estoiro", "peperoni", "mascote"};
-            String palavra = palavras[(int) (Math.random() * palavras.length)];
+        String palavra= Palavras.palavras();
             System.out.println("\n\n");
             
             boolean jogo = true;
@@ -82,7 +80,7 @@ public class main {
                 jogar = false;
             }
         } while (jogar);
-
+        entrada.close();
 	}
 
 }
