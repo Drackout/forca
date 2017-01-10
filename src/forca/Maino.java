@@ -3,7 +3,7 @@ package forca;
 import java.util.Scanner;
 
 
-public class main {
+public class Maino {
 
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
@@ -11,15 +11,14 @@ public class main {
         //caso queira repetir
         do {
             System.out.println(" ~ Jogo da Forca ~ ");
-            //Dicionario
-            String palavras[] = {
-                "one", "two", "three", "arroz", "esdruxulo", "yolo", "bacon", "estoiro", "peperoni", "mascote"};
-            String palavra = palavras[(int) (Math.random() * palavras.length)];
+            
+        //devolver uma palavra
+        String palavra= Palavras.palavras();
             System.out.println("\n\n");
             
             boolean jogo = true;
             do {
-                //letras sorteadas
+                //separar letra a letra
                 char letras[] = new char[palavra.length()];
                 for (int x = 0; x < palavra.length(); x++) {
                     letras[x] = palavra.charAt(x);
@@ -63,7 +62,7 @@ public class main {
                             tentativas = false;
                         } else {
                         	//chamar o grafic
-                        	grafic teste = new grafic(erro);
+                        	Grafico teste = new Grafico(erro);
                         }
                     } else {
                         System.out.println("\nEsgotou as tentativas! ");
@@ -82,7 +81,7 @@ public class main {
                 jogar = false;
             }
         } while (jogar);
-
+        entrada.close();
 	}
 
 }

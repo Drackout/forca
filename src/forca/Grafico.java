@@ -1,8 +1,8 @@
 package forca;
 
-public class grafic {
+public class Grafico {
 
-	public grafic(int erro){
+	public Grafico(int erro){
 		if (erro == 0) {
         	System.out.println("\n#####");
         	System.out.println("#   #");
@@ -63,6 +63,5 @@ public class grafic {
         	System.out.println("#    ");
         	System.out.println("######");
         }
-	}
-
+	}	
 }
